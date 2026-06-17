@@ -1,0 +1,21 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 56px 0 72px;
+}
+
+@media (max-width: 640px) {
+  .main {
+    align-items: flex-start;
+    padding-top: 48px;
+  }
+}
