@@ -1,6 +1,8 @@
 import { Footer } from "@/components/layout/Footer/Footer";
 import { Header } from "@/components/layout/Header/Header";
 import { HeroSection } from "@/components/sections/HeroSection/HeroSection";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection/HowItWorksSection";
+import { ProblemSection } from "@/components/sections/ProblemSection/ProblemSection";
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -10,6 +12,8 @@ export default function Home() {
 
       <main className={styles.main}>
         <HeroSection />
+        <ProblemSection />
+        <HowItWorksSection />
       </main>
 
       <Footer />
