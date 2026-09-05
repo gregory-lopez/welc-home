@@ -1,0 +1,110 @@
+.switcher {
+  position: fixed;
+  z-index: 50;
+  right: 18px;
+  bottom: 18px;
+  width: min(520px, calc(100% - 36px));
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: 0 12px 30px rgb(32 56 59 / 16%);
+  backdrop-filter: blur(8px);
+}
+
+.switcher > p {
+  margin: 0 0 10px;
+  color: var(--foreground);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.option {
+  display: flex;
+  min-height: 38px;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--foreground);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+  text-align: left;
+}
+
+.option:hover {
+  background: var(--accent-soft);
+}
+
+.option[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.option:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 2px;
+}
+
+.option > span {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  border: 1px solid rgb(0 0 0 / 14%);
+  border-radius: 50%;
+}
+
+.option[data-palette="calanque"] > span {
+  background: #176f6a;
+}
+
+.option[data-palette="pinede"] > span {
+  background: #3f6b55;
+}
+
+.option[data-palette="faience"] > span {
+  background: #24647a;
+}
+
+.option[data-palette="olivier"] > span {
+  background: #3f6957;
+}
+
+.option[data-palette="tuile"] > span {
+  background: #984936;
+}
+
+.option[data-palette="bougainvillier"] > span {
+  background: #8b4858;
+}
+
+@media (max-width: 640px) {
+  .switcher {
+    right: 12px;
+    bottom: 12px;
+    width: min(260px, calc(100% - 24px));
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option {
+    transition: none;
+  }
+}

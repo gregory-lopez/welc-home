@@ -1,0 +1,284 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 92px;
+  scroll-margin-top: 32px;
+}
+
+.content {
+  max-width: 500px;
+  padding-top: 8px;
+}
+
+.kicker {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 3.1rem;
+  line-height: 1.08;
+}
+
+.intro {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.area {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0 0;
+  color: var(--accent-strong);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.area::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--coral);
+  content: "";
+}
+
+.form {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 18px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  color: var(--foreground);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.fieldWide {
+  grid-column: 1 / -1;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.field input,
+.field select {
+  min-height: 52px;
+}
+
+.field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #7a8481;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  outline: 3px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  outline-offset: 2px;
+}
+
+.extras {
+  min-width: 0;
+  margin: 0;
+  padding: 20px 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.extras legend {
+  padding: 0 12px 0 0;
+  color: var(--foreground);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.extraOptions {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.extraOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--foreground);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.extraOption input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.extraOption input:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.extrasNote,
+.standardNote {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.extrasNote {
+  margin: 16px 0 0;
+}
+
+.standardNote {
+  margin: 8px 0 0;
+}
+
+.submit {
+  display: inline-flex;
+  min-height: 54px;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--surface);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.submit:hover {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.submit:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.message {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.privacyNote {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.privacyNote a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacyNote a:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .content {
+    max-width: 680px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    gap: 34px;
+    scroll-margin-top: 20px;
+  }
+
+  .content h2 {
+    font-size: 2.35rem;
+  }
+
+  .intro {
+    margin-top: 18px;
+    font-size: 0.98rem;
+  }
+
+  .area {
+    margin-top: 22px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .submit {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field input,
+  .field select,
+  .field textarea,
+  .submit {
+    transition: none;
+  }
+}

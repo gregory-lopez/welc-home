@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  title: "Welc'Home | Menage et conciergerie a Marseille",
+  title: "Welc’Home | Nettoyage location courte durée à Marseille",
   description:
-    "Service professionnel de menage et de conciergerie courte duree a Marseille et ses alentours.",
+    "Service local de nettoyage et remise en ordre pour locations courte durée à Marseille et ses alentours. Préparez votre logement entre deux séjours.",
 };
 
 export default function RootLayout({

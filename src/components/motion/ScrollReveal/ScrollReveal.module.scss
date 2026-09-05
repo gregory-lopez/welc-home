@@ -1,0 +1,46 @@
+.root {
+  width: 100%;
+  min-width: 0;
+}
+
+.prepared {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 780ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay),
+    transform 780ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+}
+
+@media (max-width: 640px) {
+  .prepared {
+    transform: translateY(9px);
+  }
+
+  .visible {
+    transform: translateY(0);
+    transition-duration: 680ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prepared,
+  .visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media print {
+  .prepared,
+  .visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

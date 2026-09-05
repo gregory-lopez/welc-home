@@ -13,17 +13,33 @@
   font-weight: 700;
 }
 
-.location {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation a {
+  color: var(--foreground);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+.navigation a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.brand:focus-visible,
+.navigation a:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
 }
 
 @media (max-width: 640px) {
   .header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    gap: 16px;
     padding-top: 22px;
   }
 }

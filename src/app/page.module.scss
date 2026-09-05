@@ -5,18 +5,19 @@
 }
 
 .main {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 88px;
-  padding: 56px 0 96px;
+  gap: 104px;
+  padding: 64px 0 112px;
 }
 
 @media (max-width: 640px) {
   .main {
-    gap: 64px;
-    padding-top: 48px;
+    width: min(100% - 32px, 1180px);
+    gap: 72px;
+    padding: 52px 0 88px;
   }
 }
